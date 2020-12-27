@@ -1,0 +1,42 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Sun Dec 27 13:22:10 2020
+
+@author: Pradeep_Ramesh
+"""
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+ <div class="login">
+	<h1>Predict Smart DO</h1>
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="Daily Feed Amount" placeholder="Daily Feed Amount" required="required" />
+        <input type="text" name="pH Change" placeholder="pH Change" required="required" />
+		<input type="text" name="water colour" placeholder="water colour" required="required" />
+		<input type="text" name="Water temp" placeholder="Water temp" required="required" />
+		<input type="text" name="Biofloc" placeholder="Biofloc" required="required" />
+		<input type="text" name="SDR" placeholder="SDR" required="required" />
+		<input type="text" name="CE" placeholder="CE" required="required" />
+		<input type="text" name="water level	" placeholder="water level" required="required" />
+		<input type="text" name="Operated HP" placeholder="Operated HP" required="Operated HP" />
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
